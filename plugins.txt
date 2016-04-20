@@ -6,3 +6,9 @@ environment-script
 ghprb
 rebuild
 buildresult-trigger
+scm-api
+github-api
+github
+plain-credentials
+ssh-agent
+workflow-step-api
