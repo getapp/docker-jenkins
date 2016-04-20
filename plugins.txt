@@ -1,0 +1,8 @@
+git
+postbuildscript
+htmlpublisher
+ansicolor
+environment-script
+ghprb
+rebuild
+buildresult-trigger
