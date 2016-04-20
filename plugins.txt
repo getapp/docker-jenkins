@@ -1,3 +1,6 @@
+git-client
+token-macro
+structs
 git
 postbuildscript
 htmlpublisher
