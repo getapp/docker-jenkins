@@ -18,6 +18,8 @@ RUN wget https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VE
 RUN usermod -a -G docker jenkins
 RUN chown -R jenkins:jenkins /var/jenkins_home
 
+RUN echo -e "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
+
 USER jenkins
 
 ADD config/ /usr/share/jenkins/ref/init.groovy.d/
