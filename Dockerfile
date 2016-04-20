@@ -5,7 +5,9 @@ MAINTAINER Boris Mikhaylov
 ENV DEBIAN_FRONTEND noninteractive
 
 # install docker client
-RUN wget -qO- https://get.docker.com/ | sh \
+RUN apt-get update \
+		&& apt-get install -y linux-image-virtual linux-image-extra-virtual \
+		&& wget -qO- https://get.docker.com/ | sh \
 		&& apt-get -f clean \
 		&& rm -rf /var/lib/apt/lists/*
 
