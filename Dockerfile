@@ -6,7 +6,9 @@ ENV DEBIAN_FRONTEND noninteractive
 
 USER root
 # install docker client
+ENV DOCKER_VERSION 1.10.3
 RUN wget -qO- https://get.docker.com/ | sh \
+    && apt-get install -y docker-engine=${DOCKER_VERSION}-0~jessie
 		&& apt-get clean \
 		&& rm -rf /var/lib/apt/lists/*
 
