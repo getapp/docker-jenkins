@@ -1,4 +1,4 @@
-FROM jenkins:latest
+FROM jenkins:1.651.1
 
 MAINTAINER Boris Mikhaylov
 
@@ -21,6 +21,9 @@ RUN chown -R jenkins:jenkins /var/jenkins_home
 RUN echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
 
 USER jenkins
+
+ENV JENKINS_OPTS --httpPort=80 --httpsPort=-1
+EXPOSE 80
 
 ADD config/ /usr/share/jenkins/ref/init.groovy.d/
 ADD plugins.txt /usr/share/jenkins/ref/
