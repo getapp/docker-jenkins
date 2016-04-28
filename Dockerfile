@@ -22,9 +22,6 @@ RUN echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
 
 USER jenkins
 
-ENV JENKINS_OPTS --httpPort=80 --httpsPort=-1
-EXPOSE 80
-
 ADD config/ /usr/share/jenkins/ref/init.groovy.d/
 ADD plugins.txt /usr/share/jenkins/ref/
 RUN /usr/local/bin/plugins.sh /usr/share/jenkins/ref/plugins.txt
