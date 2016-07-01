@@ -16,3 +16,4 @@ plain-credentials
 ssh-agent
 workflow-step-api
 swarm
+embeddable-build-status
