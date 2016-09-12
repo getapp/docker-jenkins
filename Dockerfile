@@ -18,7 +18,7 @@ RUN curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE
  && chmod +x /usr/local/bin/docker-compose
 
 RUN groupadd -f --gid 1001 docker_default
-RUN usermod -a --gid 1001 jenkins
+RUN usermod -a -G docker_default jenkins
 RUN chown -R jenkins:jenkins /var/jenkins_home
 
 RUN echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
