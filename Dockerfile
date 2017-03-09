@@ -6,14 +6,14 @@ ENV DEBIAN_FRONTEND noninteractive
 
 USER root
 # install docker client
-ENV DOCKER_VERSION 1.10.3
+ENV DOCKER_VERSION 1.13.1
 RUN wget -qO- https://get.docker.com/ | sh \
     && apt-get install -y --force-yes docker-engine=${DOCKER_VERSION}-0~jessie \
 		&& apt-get clean \
 		&& rm -rf /var/lib/apt/lists/*
 
 # install docker compose
-ENV DOCKER_COMPOSE_VERSION 1.7.0
+ENV DOCKER_COMPOSE_VERSION 1.11.2
 RUN curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose \
  && chmod +x /usr/local/bin/docker-compose
 
