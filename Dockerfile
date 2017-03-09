@@ -17,7 +17,7 @@ ENV DOCKER_COMPOSE_VERSION 1.11.2
 RUN curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose \
  && chmod +x /usr/local/bin/docker-compose
 
-RUN groupadd -f --gid 1001 docker_default
+RUN groupadd -f --gid 1002 docker_default
 RUN usermod -a -G docker_default jenkins
 RUN chown -R jenkins:jenkins /var/jenkins_home
 
