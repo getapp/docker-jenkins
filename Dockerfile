@@ -6,14 +6,14 @@ ENV DEBIAN_FRONTEND noninteractive
 
 USER root
 # install docker client
-ENV DOCKER_VERSION 1.13.1
+ENV DOCKER_VERSION 17.06.0
 RUN wget -qO- https://get.docker.com/ | sh \
-    && apt-get install -y --force-yes docker-engine=${DOCKER_VERSION}-0~debian-jessie \
+    && apt-get install -y --force-yes docker-engine=${DOCKER_VERSION}~ce-0~debian-jessie \
 		&& apt-get clean \
 		&& rm -rf /var/lib/apt/lists/*
 
 # install docker compose
-ENV DOCKER_COMPOSE_VERSION 1.11.2
+ENV DOCKER_COMPOSE_VERSION 1.15.0
 RUN curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose \
  && chmod +x /usr/local/bin/docker-compose
 
