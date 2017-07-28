@@ -8,7 +8,7 @@ USER root
 # install docker client
 ENV DOCKER_VERSION 17.06.0
 RUN wget -qO- https://get.docker.com/ | sh \
-    && apt-get install -y --force-yes docker-engine=${DOCKER_VERSION}~ce-0~debian-jessie \
+    && apt-get install -y --force-yes docker-сe=${DOCKER_VERSION}~ce-0~debian-jessie \
 		&& apt-get clean \
 		&& rm -rf /var/lib/apt/lists/*
 
