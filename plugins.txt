@@ -2,7 +2,7 @@ git-client
 token-macro
 structs
 git
-post-tasks
+postbuild-task
 htmlpublisher
 ansicolor
 environment-script
